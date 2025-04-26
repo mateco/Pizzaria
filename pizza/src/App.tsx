@@ -9,16 +9,16 @@ import { Mensagem } from './components/Mensagem';
 
 function App() {
   return (
-    <Box sx={{ display: 'flex',flexDirection: 'column',minHeight: '100vh',width: '100%' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100%' }}>
       
       <Header />
       
-      <Box>
-      <Banner />
-      <Bloco1/>
-      <Faq/>
-      <Duvidas/>
-      <Mensagem/>
+      <Box sx={{ paddingTop: '130px' }}>
+        <Banner />
+        <Bloco1 />
+        <Faq />
+        <Duvidas />
+        <Mensagem />
       </Box>
     
       <Footer />
