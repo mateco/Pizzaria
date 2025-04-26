@@ -8,18 +8,24 @@ const WhatsIcon = styled('img')({
 
 interface WhatsAppButtonProps {
   text?: string;
-  color?: string; // Cor do texto
-  bgColor?: string; // Cor do fundo
+  color?: string;
+  bgColor?: string;
+  icon?: string; 
 }
 
 export function WhatsAppButton({
   text = 'Entre em contato',
-  color = '#fff', // Cor do texto padrão (branco)
-  bgColor = '#25D366', // Cor do fundo padrão (verde do WhatsApp)
+  color = '#fff',
+  bgColor = '#25D366',
+  icon = '/whatsapp.svg'
 }: WhatsAppButtonProps) {
+  const handleClick = () => {
+    const url = 'https://wa.me/5545988041417?text=Oi%20mensagem%0A';
+    window.open(url, '_blank');
+  };
+
   return (
-    <Button
-      variant="contained"
+    <Button onClick={handleClick} variant="contained"
       sx={{
         backgroundColor: bgColor,
         color,
@@ -27,13 +33,15 @@ export function WhatsAppButton({
         borderRadius: '8px',
         textTransform: 'none',
         boxShadow: 'none',
+        whiteSpace: 'nowrap',
+        minWidth: 'fit-content',
         px: 3,
         '&:hover': {
-          backgroundColor: '#f5f5f5',
-          boxShadow: 'none',
+          backgroundColor: bgColor, 
+          opacity: 0.9,
         },
       }}
-      startIcon={<WhatsIcon src="/whatsapp.svg" alt="WhatsApp" />}
+      startIcon={<WhatsIcon src={icon} alt="WhatsApp" />}
     >
       {text}
     </Button>
