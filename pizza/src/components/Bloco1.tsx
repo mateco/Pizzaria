@@ -31,7 +31,7 @@ export function Bloco1() {
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
             {[1, 2, 3].map((index) => (
               <Box key={index} sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'left', sm: 'flex-start' }, textAlign: { xs: 'left', sm: 'left' }, gap: 1.5 }}>
-                <Box component="img" src={`public/icone${index}.svg`} alt={`Ícone ${index}`} sx={{ width: 40, height: 40, borderRadius: 2, boxShadow: 1, p: 1 }}/>
+                <Box component="img" src={`/icone${index}.svg`} alt={`Ícone ${index}`} sx={{ width: 40, height: 40, borderRadius: 2, boxShadow: 1, p: 1 }}/>
                 
                 <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   
